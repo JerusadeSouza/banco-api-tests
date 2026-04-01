@@ -42,11 +42,11 @@ describe('Transferências', () => {
     describe('GET /transferencia/{id}', () => {
         it('Deve retornar suesso com 200 e dados iguais ao registro de transferencia contidos no banco de dados quando o id for valido', async () => {
             const resposta  = await request(process.env.BASE_URL)
-                .get('/transferencias/107')
+                .get('/transferencias/2')
                 .set('Authorization', `Bearer ${token}`)
             
             expect(resposta.status).to.equal(200)
-            expect(resposta.body.id).to.equal(107)
+            expect(resposta.body.id).to.equal(2)
             expect(resposta.body.id).to.be.a('number')
             expect(resposta.body.conta_origem_id).to.equal(1)
         })
